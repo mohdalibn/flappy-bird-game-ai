@@ -378,7 +378,7 @@ if __name__ == "__main__":
     # this gives us the path to our local/working/current directory
     local_dir = os.path.dirname(__file__)
 
-    config_path = os.path.join(local_dir, 'loadconfig.txt')
+    config_path = os.path.join(local_dir, 'testconfig.txt')
 
     # Testing the saved model
     genome_path = os.path.join(local_dir, 'BestBirdNN')
