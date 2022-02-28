@@ -7,8 +7,7 @@
 <!-- Project Description -->
 # ![project-description (5)](https://user-images.githubusercontent.com/95453430/156005093-3fe6d5c7-aa3d-499f-a71a-bff216782b4a.svg)
 
-
-This is a **Python** project featuring a replica of the google chrome dinosaur game with images sprites found online using a python game library called **PyGame**. The **Neural Network Model** was developed using a special **genetic algorithm** module in python called the **Neural Evolution of Augmented Topologies (NEAT)**  .The design of the mainmenu background, the navigation buttons, and the statistics dashboards were all created using a design prototyping tool called **Figma**. In this application, the user is able to **Train** & **Test** thier model which is stored as a **pickle file** under the name **DinoWinner**.
+This is a **Python** project featuring a replica of the **Flappy Bird** game with images sprites found online using a python game library called **PyGame**. The **Neural Network Model** was developed using a special **genetic algorithm** module in python called the **Neural Evolution of Augmented Topologies (NEAT)**  .The design of the mainmenu background, the navigation buttons, and the statistics dashboards were all created using a design prototyping tool called **Figma**. In this application, the user is able to **Train** & **Test** thier model which is stored as a **pickle file** under the name **BestBirdNN**.
 
 <!-- Tech Stack -->
 # ![technologies-used (4)](https://user-images.githubusercontent.com/95453430/156005287-1cdfd4c2-a54d-45ac-aa5a-f32da0009a6d.svg)
