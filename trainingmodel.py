@@ -487,6 +487,6 @@ def run(config_path):
 if __name__ == "__main__":
     # this gives us the path to our local/working/current directory
     local_dir = os.path.dirname(__file__)
-    config_path = os.path.join(local_dir, 'config.txt')
+    config_path = os.path.join(local_dir, 'trainconfig.txt')
 
     run(config_path)
