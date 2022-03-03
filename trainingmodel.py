@@ -214,33 +214,6 @@ class Base:
         SCREEN.blit(self.IMG, (self.x2, self.y))
 
 
-def draw_window(SCREEN, birds, pipes, base, score):
-    global population
-
-    SCREEN.blit(BG_IMG, (0, 0))
-
-    for pipe in pipes:
-        pipe.draw(SCREEN)
-
-    score_text = FONT.render("Score: " + str(score), 1, (255, 255, 255))
-    SCREEN.blit(score_text, (SCREEN_WIDTH - 10 - score_text.get_width(), 10))
-
-    generation_text = FONT2.render(
-        "Gen: " + str(population.generation + 1), 1, (255, 255, 255))
-    SCREEN.blit(generation_text, (10, 10))
-
-    population_text = FONT2.render(
-        "Birds Remaining: " + str(len(birds)), 1, (255, 255, 255))
-    SCREEN.blit(population_text, (10, 35))
-
-    base.draw(SCREEN)
-
-    for bird in birds:
-        bird.draw(SCREEN)
-
-    pygame.display.update()
-
-
 class MenuButton():  # Custom class for buttons in pygame
     # Init method defined
     def __init__(self, image, hoverimage, pos):
@@ -267,6 +240,34 @@ class MenuButton():  # Custom class for buttons in pygame
             self.image = hoverimage
         else:
             self.image = image
+
+
+def draw_window(SCREEN, birds, pipes, base, score):
+    global population
+
+    SCREEN.blit(BG_IMG, (0, 0))
+
+    for pipe in pipes:
+        pipe.draw(SCREEN)
+
+    score_text = FONT.render("Score: " + str(score), 1, (255, 255, 255))
+    SCREEN.blit(score_text, (SCREEN_WIDTH - 10 - score_text.get_width(), 10))
+
+    generation_text = FONT2.render(
+        "Gen: " + str(population.generation + 1), 1, (255, 255, 255))
+    SCREEN.blit(generation_text, (10, 10))
+
+    population_text = FONT2.render(
+        "Birds Remaining: " + str(len(birds)), 1, (255, 255, 255))
+    SCREEN.blit(population_text, (10, 35))
+
+    base.draw(SCREEN)
+
+    for bird in birds:
+        bird.draw(SCREEN)
+
+    pygame.display.update()
+
 
 # this fitness function was orginally named main()
 
