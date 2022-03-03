@@ -25,5 +25,5 @@ This is a **Python** project featuring a replica of the **Flappy Bird** game wit
 - Click on the green **Code** button on the top of this page and download the repository zip using the method of your choice.
 - Extract the files into a suitable folder.
 - Open the mainmenu.py file on the IDE of your choice. (VSCode Recommended)
-- The repository already comes with a trained **BestBirdNN** model. To train your own model, delete the **BestBirdNN file** first and then run the mainmenu.py file and click on the **Train** button on the main menu. Once the **training** process is complete, a new **BestBirdNN** file will be created.
+- To train your own model, delete the **BestBirdNN file** first (not needed as the file isn't available in this repository) and then run the mainmenu.py file and click on the **Train** button on the main menu. Once the **training** process is complete, a new **BestBirdNN** file will be created.
 - Click on the **Test** button on the main menu to test your model.
