@@ -17,7 +17,7 @@ pygame.display.set_caption("FlappyBirdAI (NEAT)")
 # Constants
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 700
-SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.NOFRAME)
 
 FONT = pygame.font.SysFont("comicsans", 50)
 FONT2 = pygame.font.Font('freesansbold.ttf', 20)
