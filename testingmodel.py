@@ -6,6 +6,7 @@ import os
 import neat
 import time
 import random
+import mainmenu
 import pickle  # use this module to save the best bird into a file and then you can load in the file and use the neural network associated with it
 
 
@@ -421,7 +422,7 @@ def game(genomes, config):
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if BACK_BUTTON.checkForInput(MENU_MOUSE_POS):
-                    # mainmenu.MainMenu()
+                    mainmenu.MainMenu()
                     pass
                 if QUIT_BUTTON.checkForInput(MENU_MOUSE_POS):
                     pygame.quit()
