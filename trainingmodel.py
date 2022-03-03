@@ -21,6 +21,7 @@ SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.NOFRAME)
 
 FONT = pygame.font.SysFont("comicsans", 50)
 FONT2 = pygame.font.Font('freesansbold.ttf', 20)
+FONT3 = pygame.font.SysFont("comicsans", 35)
 
 GEN = 0  # keeping track of the current generation for visual purpose
 
@@ -269,8 +270,8 @@ def draw_window(SCREEN, birds, pipes, base, score, ButtonList, MENU_MOUSE_POS):
     # Renders the Training Stats Rectangle on the screen
     SCREEN.blit(TrainBG, (500, 0))
 
-    score_text = FONT.render(str(score), True, (255, 0, 0))
-    SCREEN.blit(score_text, (800, 10))
+    score_text = FONT3.render(str(score), True, (255, 255, 255))
+    SCREEN.blit(score_text, (880, 52))
 
     for button in ButtonList:
         # Changes the color of the buttons on hover
