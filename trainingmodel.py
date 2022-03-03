@@ -253,9 +253,6 @@ def draw_window(SCREEN, birds, pipes, base, score, ButtonList, MENU_MOUSE_POS):
     for pipe in pipes:
         pipe.draw(SCREEN)
 
-    score_text = FONT.render("Score: " + str(score), 1, (255, 255, 255))
-    SCREEN.blit(score_text, (SCREEN_WIDTH - 10 - score_text.get_width(), 10))
-
     generation_text = FONT2.render(
         "Gen: " + str(population.generation + 1), 1, (255, 255, 255))
     SCREEN.blit(generation_text, (10, 10))
@@ -271,6 +268,9 @@ def draw_window(SCREEN, birds, pipes, base, score, ButtonList, MENU_MOUSE_POS):
 
     # Renders the Training Stats Rectangle on the screen
     SCREEN.blit(TrainBG, (500, 0))
+
+    score_text = FONT.render(str(score), True, (255, 0, 0))
+    SCREEN.blit(score_text, (800, 10))
 
     for button in ButtonList:
         # Changes the color of the buttons on hover
