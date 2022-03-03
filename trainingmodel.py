@@ -386,10 +386,10 @@ def FitnessFunction(genomes, config):
 
         BACK_BUTTON = MenuButton(image=pygame.image.load(
             "./imgs/GameBackButton.png"), hoverimage=pygame.image.load(
-            "./imgs/GameBackButtonHover.png"), pos=(600, 606))
+            "./imgs/GameBackButtonHover.png"), pos=(600, 635))
         QUIT_BUTTON = MenuButton(image=pygame.image.load(
             "./imgs/GameQuitButton.png"), hoverimage=pygame.image.load(
-            "./imgs/GameQuitButtonHover.png"), pos=(800, 606))
+            "./imgs/GameQuitButtonHover.png"), pos=(850, 635))
 
         # List to contain the buttons
         ButtonList = [BACK_BUTTON, QUIT_BUTTON]
