@@ -245,7 +245,7 @@ class MenuButton():  # Custom class for buttons in pygame
             self.image = image
 
 
-def draw_window(SCREEN, birds, pipes, base, score):
+def draw_window(SCREEN, birds, pipes, base, score, ButtonList, MENU_MOUSE_POS):
     global population
 
     SCREEN.blit(BG_IMG, (0, 0))
@@ -270,6 +270,11 @@ def draw_window(SCREEN, birds, pipes, base, score):
         bird.draw(SCREEN)
 
     SCREEN.blit(TrainBG, (0, 0))
+
+    for button in ButtonList:
+        # Changes the color of the buttons on hover
+        button.ButtonHover(MENU_MOUSE_POS, button.image, button.hoverimage)
+        button.update(SCREEN)
 
     pygame.display.update()
 
@@ -376,7 +381,6 @@ def FitnessFunction(genomes, config):
                 ge.pop(x)
 
         base.move()  # displays the animation of the moving base
-        draw_window(SCREEN, birds, pipes, base, score)
 
         BACK_BUTTON = MenuButton(image=pygame.image.load(
             "./imgs/GameBackButton.png"), hoverimage=pygame.image.load(
@@ -388,10 +392,8 @@ def FitnessFunction(genomes, config):
         # List to contain the buttons
         ButtonList = [BACK_BUTTON, QUIT_BUTTON]
 
-        for button in ButtonList:
-            # Changes the color of the buttons on hover
-            button.ButtonHover(MENU_MOUSE_POS, button.image, button.hoverimage)
-            button.update(SCREEN)
+        draw_window(SCREEN, birds, pipes, base,
+                    score, ButtonList, MENU_MOUSE_POS)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
