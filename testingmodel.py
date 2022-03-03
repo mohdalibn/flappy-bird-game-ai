@@ -316,14 +316,7 @@ def game(genomes, config):
     while run:
         clock.tick(30)
 
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()
-                pygame.quit()
-            # Adds functionality to quit with the ESC key
-            if pygame.key.get_pressed()[pygame.K_ESCAPE]:
-                pygame.quit()
-                sys.exit()
+        MENU_MOUSE_POS = pygame.mouse.get_pos()
 
         # this code tackles the problem where there are 2 pairs of pipes on the screen and the bird doesn't know which to calculate the distance from
         pipe_index = 0
@@ -396,15 +389,53 @@ def game(genomes, config):
                 ge.pop(x)
 
         base.move()  # displays the animation of the moving base
-        draw_window(SCREEN, birds, pipes, base, score)
+
+        BACK_BUTTON = MenuButton(image=pygame.image.load(
+            "./imgs/GameBackButton.png"), hoverimage=pygame.image.load(
+            "./imgs/GameBackButtonHover.png"), pos=(600, 635))
+        QUIT_BUTTON = MenuButton(image=pygame.image.load(
+            "./imgs/GameQuitButton.png"), hoverimage=pygame.image.load(
+            "./imgs/GameQuitButtonHover.png"), pos=(900, 635))
+
+        # List to contain the buttons
+        ButtonList = [BACK_BUTTON, QUIT_BUTTON]
+
+        draw_window(SCREEN, birds, pipes, base,
+                    score, ButtonList, MENU_MOUSE_POS)
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if pygame.key.get_pressed()[pygame.K_ESCAPE]:
+                pygame.quit()
+                sys.exit()
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if BACK_BUTTON.checkForInput(MENU_MOUSE_POS):
+                    # mainmenu.MainMenu()
+                    pass
+                if QUIT_BUTTON.checkForInput(MENU_MOUSE_POS):
+                    pygame.quit()
+                    sys.exit()
 
 
 # CODE TO USE FOR USING A SAVED GENOME
 
 def replay_genome(config_path, genome_path="BestBirdNN"):
+    global population
+
     # Load requried NEAT config
     config = neat.config.Config(neat.DefaultGenome, neat.DefaultReproduction,
                                 neat.DefaultSpeciesSet, neat.DefaultStagnation, config_path)
+
+    population = neat.Population(config)
+
+    # adding stats reporters. These are optional
+    # these give us some statistical output whenever we run the program
+    population.add_reporter(neat.StdOutReporter(True))
+    stats = neat.StatisticsReporter()
+    population.add_reporter(stats)
 
     # Unpickle saved winner
     with open(genome_path, "rb") as f:  # the 'b' in rb stands for binary cuz the file is binary
