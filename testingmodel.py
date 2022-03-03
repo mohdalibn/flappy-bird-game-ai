@@ -267,6 +267,14 @@ def draw_window(SCREEN, birds, pipes, base, score, ButtonList, MENU_MOUSE_POS):
 
     SCREEN.blit(BG_IMG, (0, 0))
 
+    for pipe in pipes:
+        pipe.draw(SCREEN)
+
+    base.draw(SCREEN)
+
+    for bird in birds:
+        bird.draw(SCREEN)
+
     # Renders the Training Stats Rectangle on the screen
     SCREEN.blit(TestBG, (500, 0))
 
