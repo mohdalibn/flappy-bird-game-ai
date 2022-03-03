@@ -15,7 +15,7 @@ SCREEN_WIDTH = 1000  # Screen Width of the game window
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.NOFRAME)
 
 # Background image for the main menu
-MainMenuBG = pygame.image.load(os.path.join("./Assets/Mainmenu", "DinoBG.png"))
+MainMenuBG = pygame.image.load(os.path.join("./imgs", "FlappyBirdMM.png"))
 
 # Class for the buttons in the main menu
 
@@ -55,14 +55,14 @@ def MainMenu():
         MENU_MOUSE_POS = pygame.mouse.get_pos()
 
         TRAIN_BUTTON = MenuButton(image=pygame.image.load(
-            "./Assets/mainmenu/TrainButton.png"), hoverimage=pygame.image.load(
-            "./Assets/mainmenu/TrainButtonHover.png"), pos=(310, 260))
+            "./imgs/TrainButton.png"), hoverimage=pygame.image.load(
+            "./imgs/TrainHoverButton.png"), pos=(753, 260))
         TEST_BUTTON = MenuButton(image=pygame.image.load(
-            "./Assets/mainmenu/TestButton.png"), hoverimage=pygame.image.load(
-            "./Assets/mainmenu/TestButtonHover.png"), pos=(310, 393))
+            "./imgs/TestButton.png"), hoverimage=pygame.image.load(
+            "./imgs/TestHoverButton.png"), pos=(753, 393))
         QUIT_BUTTON = MenuButton(image=pygame.image.load(
-            "./Assets/mainmenu/QuitButton.png"), hoverimage=pygame.image.load(
-            "./Assets/mainmenu/QuitButtonHover.png"), pos=(310, 526))
+            "./imgs/QuitButton.png"), hoverimage=pygame.image.load(
+            "./imgs/QuitHoverButton.png"), pos=(753, 526))
 
         # List to contain the buttons
         ButtonList = [TRAIN_BUTTON, TEST_BUTTON, QUIT_BUTTON]
