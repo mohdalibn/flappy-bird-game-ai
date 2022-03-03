@@ -15,7 +15,7 @@ SCREEN_WIDTH = 1000  # Screen Width of the game window
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.NOFRAME)
 
 # Background image for the main menu
-DinoBG = pygame.image.load(os.path.join("./Assets/Mainmenu", "DinoBG.png"))
+MainMenuBG = pygame.image.load(os.path.join("./Assets/Mainmenu", "DinoBG.png"))
 
 # Class for the buttons in the main menu
 
@@ -50,7 +50,7 @@ class MenuButton():
 
 def MainMenu():
     while True:
-        SCREEN.blit(DinoBG, (0, 0))
+        SCREEN.blit(MainMenuBG, (0, 0))
 
         MENU_MOUSE_POS = pygame.mouse.get_pos()
 
