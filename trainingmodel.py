@@ -44,6 +44,9 @@ background_image = pygame.image.load(
 
 BG_IMG = pygame.transform.scale(background_image, (500, 700))
 
+TrainBG = pygame.image.load(os.path.join(
+    "./imgs", "TrainingStatsRect.png"))
+
 
 class Bird:
     IMGS = BIRD_IMGS
@@ -265,6 +268,8 @@ def draw_window(SCREEN, birds, pipes, base, score):
 
     for bird in birds:
         bird.draw(SCREEN)
+
+    SCREEN.blit(TrainBG, (0, 0))
 
     pygame.display.update()
 
