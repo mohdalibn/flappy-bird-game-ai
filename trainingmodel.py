@@ -241,7 +241,36 @@ def draw_window(SCREEN, birds, pipes, base, score):
     pygame.display.update()
 
 
+class MenuButton():  # Custom class for buttons in pygame
+    # Init method defined
+    def __init__(self, image, hoverimage, pos):
+        self.image = image
+        self.hoverimage = hoverimage
+        self.x_pos = pos[0]
+        self.y_pos = pos[1]
+        self.rect = self.image.get_rect(center=(self.x_pos, self.y_pos))
+
+    # Method to update the button
+    def update(self, screen):
+        if self.image is not None:
+            screen.blit(self.image, self.rect)
+
+    # Method to checkout for mouse inputs
+    def checkForInput(self, position):
+        if position[0] in range(self.rect.left, self.rect.right) and position[1] in range(self.rect.top, self.rect.bottom):
+            return True
+        return False
+
+    # Method to change the text color of the button on hover
+    def ButtonHover(self, position, image, hoverimage):
+        if position[0] in range(self.rect.left, self.rect.right) and position[1] in range(self.rect.top, self.rect.bottom):
+            self.image = hoverimage
+        else:
+            self.image = image
+
 # this fitness function was orginally named main()
+
+
 def FitnessFunction(genomes, config):
     global nets, ge, birds, population
 
@@ -268,14 +297,38 @@ def FitnessFunction(genomes, config):
     while run:
         clock.tick(30)
 
+        MENU_MOUSE_POS = pygame.mouse.get_pos()
+
+        BACK_BUTTON = MenuButton(image=pygame.image.load(
+            "./imgs/GameBackButton.png"), hoverimage=pygame.image.load(
+            "./imgs/GameBackButtonHover.png"), pos=(600, 606))
+        QUIT_BUTTON = MenuButton(image=pygame.image.load(
+            "./imgs/GameQuitButton.png"), hoverimage=pygame.image.load(
+            "./imgs/GameQuitButtonHover.png"), pos=(800, 606))
+
+        # List to contain the buttons
+        ButtonList = [BACK_BUTTON, QUIT_BUTTON]
+
+        for button in ButtonList:
+            # Changes the color of the buttons on hover
+            button.ButtonHover(MENU_MOUSE_POS, button.image, button.hoverimage)
+            button.update(SCREEN)
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                sys.exit()
                 pygame.quit()
-            # Adds functionality to quit with the ESC key
+                sys.exit()
             if pygame.key.get_pressed()[pygame.K_ESCAPE]:
                 pygame.quit()
                 sys.exit()
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if BACK_BUTTON.checkForInput(MENU_MOUSE_POS):
+                    # mainmenu.MainMenu()
+                    pass
+                if QUIT_BUTTON.checkForInput(MENU_MOUSE_POS):
+                    pygame.quit()
+                    sys.exit()
 
         # this code tackles the problem where there are 2 pairs of pipes on the screen and the bird doesn't know which to calculate the distance from
         pipe_index = 0
@@ -349,6 +402,8 @@ def FitnessFunction(genomes, config):
 
         base.move()  # displays the animation of the moving base
         draw_window(SCREEN, birds, pipes, base, score)
+
+        pygame.display.update()
 
 
 def run(config_path):
