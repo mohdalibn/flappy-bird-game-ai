@@ -21,6 +21,7 @@ SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.NOFRAME)
 
 FONT = pygame.font.SysFont("comicsans", 50)
 FONT2 = pygame.font.Font('freesansbold.ttf', 20)
+FONT3 = pygame.font.SysFont("comicsans", 35)
 
 GEN = 0  # keeping track of the current generation for visual purpose
 
@@ -230,22 +231,29 @@ class Base:
         SCREEN.blit(self.IMG, (self.x2, self.y))
 
 
-def draw_window(SCREEN, birds, pipes, base, score):
+def draw_window(SCREEN, birds, pipes, base, score, ButtonList, MENU_MOUSE_POS):
     global population
 
     SCREEN.blit(BG_IMG, (0, 0))
 
-    for pipe in pipes:
-        pipe.draw(SCREEN)
+    # Renders the Training Stats Rectangle on the screen
+    SCREEN.blit(TestBG, (500, 0))
 
-    score_text = FONT.render("Score: " + str(score), 1, (255, 255, 255))
-    SCREEN.blit(score_text, (SCREEN_WIDTH - 10 - score_text.get_width(), 10))
+    score_text = FONT3.render(str(score), True, (255, 255, 255))
+    SCREEN.blit(score_text, (880, 52))
 
-    base.draw(SCREEN)
+    generation_text = FONT.render(
+        "Generation: " + str(population.generation + 1), 1, "#AD06E8")
+    SCREEN.blit(generation_text, (640, 350))
 
-    for bird in birds:
-        bird.draw(SCREEN)
-        bird.draw_hitbox()
+    population_text = FONT.render(
+        "Birds Remaining: " + str(len(birds)), 1, "#AD06E8")
+    SCREEN.blit(population_text, (590, 450))
+
+    for button in ButtonList:
+        # Changes the color of the buttons on hover
+        button.ButtonHover(MENU_MOUSE_POS, button.image, button.hoverimage)
+        button.update(SCREEN)
 
     pygame.display.update()
 
