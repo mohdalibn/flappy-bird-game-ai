@@ -283,8 +283,6 @@ def draw_window(SCREEN, birds, pipes, base, score, ButtonList, MENU_MOUSE_POS):
 
 
 # this fitness function was orginally named main()
-
-
 def FitnessFunction(genomes, config):
     global nets, ge, birds, population
 
@@ -366,10 +364,11 @@ def FitnessFunction(genomes, config):
         # appends a new pipe for display once we pass a pipe and adds the scores
         if add_pipe:
 
+            score += 1
+
             for g in ge:
                 g.fitness += 5  # incrementing the fitness of a bird if it passes thru a pipe succesfully
 
-            score += 1
             pipes.append(Pipe(550))
 
         # removes the passed pipes from the remove_pipe list
