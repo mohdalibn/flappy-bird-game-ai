@@ -364,10 +364,15 @@ def FitnessFunction(genomes, config):
         # appends a new pipe for display once we pass a pipe and adds the scores
         if add_pipe:
 
-            score += 1
-
             for g in ge:
                 g.fitness += 5  # incrementing the fitness of a bird if it passes thru a pipe succesfully
+
+                # Awards fitness Threshold if the Game Score is 20
+                if score == 20:
+                    g.fitness += 100
+                    break
+
+            score += 1
 
             pipes.append(Pipe(550))
 
