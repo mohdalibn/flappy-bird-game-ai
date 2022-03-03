@@ -254,14 +254,6 @@ def draw_window(SCREEN, birds, pipes, base, score, ButtonList, MENU_MOUSE_POS):
     for pipe in pipes:
         pipe.draw(SCREEN)
 
-    generation_text = FONT2.render(
-        "Gen: " + str(population.generation + 1), 1, (255, 255, 255))
-    SCREEN.blit(generation_text, (10, 10))
-
-    population_text = FONT2.render(
-        "Birds Remaining: " + str(len(birds)), 1, (255, 255, 255))
-    SCREEN.blit(population_text, (10, 35))
-
     base.draw(SCREEN)
 
     for bird in birds:
@@ -272,6 +264,14 @@ def draw_window(SCREEN, birds, pipes, base, score, ButtonList, MENU_MOUSE_POS):
 
     score_text = FONT3.render(str(score), True, (255, 255, 255))
     SCREEN.blit(score_text, (880, 52))
+
+    generation_text = FONT2.render(
+        "Generation: " + str(population.generation + 1), 1, (255, 255, 255))
+    SCREEN.blit(generation_text, (10, 10))
+
+    population_text = FONT2.render(
+        "Birds Remaining: " + str(len(birds)), 1, (255, 255, 255))
+    SCREEN.blit(population_text, (10, 35))
 
     for button in ButtonList:
         # Changes the color of the buttons on hover
