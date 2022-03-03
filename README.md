@@ -2,7 +2,9 @@
 # ![flappy-bird-game-ai](https://user-images.githubusercontent.com/95453430/156005074-9d3a353c-449a-453d-b607-e4374c19c8f5.svg)
 
 <!-- Project Images -->
+![FlappyBirdMMImg](https://user-images.githubusercontent.com/95453430/156608616-86b02e3f-1e80-433e-a174-f3d6004babfa.png)
 
+![FlappyBirdTrainingImg](https://user-images.githubusercontent.com/95453430/156608837-b178de17-3ea6-47a2-a683-40787d8c7cb8.png)
 
 <!-- Project Description -->
 # ![project-description (5)](https://user-images.githubusercontent.com/95453430/156005093-3fe6d5c7-aa3d-499f-a71a-bff216782b4a.svg)
