@@ -45,6 +45,9 @@ background_image = pygame.image.load(
 
 BG_IMG = pygame.transform.scale(background_image, (500, 700))
 
+TestBG = pygame.image.load(os.path.join(
+    "./imgs", "TestingStatsRect.png"))
+
 
 class Bird:
     IMGS = BIRD_IMGS
