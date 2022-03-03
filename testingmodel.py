@@ -283,7 +283,7 @@ def draw_window(SCREEN, birds, pipes, base, score, ButtonList, MENU_MOUSE_POS):
     SCREEN.blit(score_text, (880, 52))
 
     generation_text = FONT.render(
-        "Generation: " + str(population.generation + 1), 1, "#AD06E8")
+        "Generation: Best Offspring", 1, "#AD06E8")
     SCREEN.blit(generation_text, (640, 350))
 
     population_text = FONT.render(
