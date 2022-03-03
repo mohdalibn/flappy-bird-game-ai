@@ -15,7 +15,7 @@ pygame.init()
 pygame.display.set_caption("FlappyBirdAI (NEAT)")
 
 # Constants
-SCREEN_WIDTH = 500
+SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 700
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
