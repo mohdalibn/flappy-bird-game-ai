@@ -9,7 +9,7 @@ import testingmodel as TestAI
 pygame.init()
 
 # Global Constanst
-SCREEN_HEIGHT = 650  # Screen Height of the game window
+SCREEN_HEIGHT = 700  # Screen Height of the game window
 SCREEN_WIDTH = 1000  # Screen Width of the game window
 # pygame.NOFRAME removes the task bar from the game window
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.NOFRAME)
