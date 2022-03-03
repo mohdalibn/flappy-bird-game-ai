@@ -250,7 +250,7 @@ def draw_window(SCREEN, birds, pipes, base, score):
     pygame.display.update()
 
 
-# this fitness function was orginally named main()
+# Main game function
 def game(genomes, config):
     global nets, ge, birds, population
 
@@ -281,6 +281,10 @@ def game(genomes, config):
             if event.type == pygame.QUIT:
                 sys.exit()
                 pygame.quit()
+            # Adds functionality to quit with the ESC key
+            if pygame.key.get_pressed()[pygame.K_ESCAPE]:
+                pygame.quit()
+                sys.exit()
 
         # this code tackles the problem where there are 2 pairs of pipes on the screen and the bird doesn't know which to calculate the distance from
         pipe_index = 0
