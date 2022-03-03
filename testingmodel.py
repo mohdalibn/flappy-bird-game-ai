@@ -234,6 +234,34 @@ class Base:
         SCREEN.blit(self.IMG, (self.x2, self.y))
 
 
+class MenuButton():  # Custom class for buttons in pygame
+    # Init method defined
+    def __init__(self, image, hoverimage, pos):
+        self.image = image
+        self.hoverimage = hoverimage
+        self.x_pos = pos[0]
+        self.y_pos = pos[1]
+        self.rect = self.image.get_rect(center=(self.x_pos, self.y_pos))
+
+    # Method to update the button
+    def update(self, screen):
+        if self.image is not None:
+            screen.blit(self.image, self.rect)
+
+    # Method to checkout for mouse inputs
+    def checkForInput(self, position):
+        if position[0] in range(self.rect.left, self.rect.right) and position[1] in range(self.rect.top, self.rect.bottom):
+            return True
+        return False
+
+    # Method to change the text color of the button on hover
+    def ButtonHover(self, position, image, hoverimage):
+        if position[0] in range(self.rect.left, self.rect.right) and position[1] in range(self.rect.top, self.rect.bottom):
+            self.image = hoverimage
+        else:
+            self.image = image
+
+
 def draw_window(SCREEN, birds, pipes, base, score, ButtonList, MENU_MOUSE_POS):
     global population
 
