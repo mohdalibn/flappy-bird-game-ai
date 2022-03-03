@@ -456,7 +456,7 @@ def replay_genome(config_path, genome_path="BestBirdNN"):
     game(genomes, config)
 
 
-if __name__ == "__main__":
+def testrun():
     # this gives us the path to our local/working/current directory
     local_dir = os.path.dirname(__file__)
 
@@ -465,3 +465,7 @@ if __name__ == "__main__":
     # Testing the saved model
     genome_path = os.path.join(local_dir, 'BestBirdNN')
     replay_genome(config_path, genome_path="BestBirdNN")
+
+
+if __name__ == "__main__":
+    testrun()
