@@ -269,7 +269,8 @@ def draw_window(SCREEN, birds, pipes, base, score, ButtonList, MENU_MOUSE_POS):
     for bird in birds:
         bird.draw(SCREEN)
 
-    SCREEN.blit(TrainBG, (0, 0))
+    # Renders the Training Stats Rectangle on the screen
+    SCREEN.blit(TrainBG, (500, 0))
 
     for button in ButtonList:
         # Changes the color of the buttons on hover
