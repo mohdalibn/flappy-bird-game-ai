@@ -247,7 +247,7 @@ class MenuButton():  # Custom class for buttons in pygame
 
 
 def draw_window(SCREEN, birds, pipes, base, score, ButtonList, MENU_MOUSE_POS):
-    global population, teststats
+    global population
 
     SCREEN.blit(BG_IMG, (0, 0))
 
