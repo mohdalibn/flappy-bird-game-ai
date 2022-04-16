@@ -22,8 +22,28 @@ This is a **Python** project featuring a replica of the **Flappy Bird** game wit
 <!-- How To Use-->
 # ![how-to-run-project (2)](https://user-images.githubusercontent.com/95453430/156005356-7eccdd3c-11de-49e5-b519-06414f4eb0d5.svg)
 
+**Install the following Python libraries in your Virtual Environment using PIP**.
+
+*Note: The library names are **CASE-SENSITIVE** for PIP installations below. Make sure your type them correctly.*
+
+*Install PyGame for Python*
+```Python
+pip install pygame
+```
+
+*Install NEAT for Python*
+```Python
+pip install neat-python
+```
+
+*Install Numpy for Python*
+```Python
+pip install numpy
+```
+
 - Click on the green **Code** button on the top of this page and download the repository zip using the method of your choice.
 - Extract the files into a suitable folder.
+- Install all the libraries mentioned above.
 - Open the mainmenu.py file on the IDE of your choice. (VSCode Recommended)
 - To train your own model, delete the **BestBirdNN file** first (not needed as the file isn't available in this repository) and then run the mainmenu.py file and click on the **Train** button on the main menu. Once the **training** process is complete, a new **BestBirdNN** file will be created.
 - Click on the **Test** button on the main menu to test your model.
